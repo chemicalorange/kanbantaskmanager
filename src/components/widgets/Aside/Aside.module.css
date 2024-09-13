@@ -1,0 +1,12 @@
+aside {
+    width: 15%;
+    height: 100vh;
+    border-right: 2px solid gray;
+    padding-right: 15px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
