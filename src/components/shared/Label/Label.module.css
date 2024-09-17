@@ -1,0 +1,9 @@
+.label {
+    margin-bottom: 15px;
+}
+
+.label p{
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
