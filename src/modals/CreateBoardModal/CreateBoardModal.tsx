@@ -71,7 +71,7 @@ const CreateBoardModal = ({closeModal}: CreateBoardModalProps) => {
 
   const onClickCreateColumnButtonHandler = () => {
     setBoardData((prevState) => {
-        const updatedColumns = [...prevState.columns, {name: 'Unnamed', id: uuid(), hex: randomColor({luminosity: 'light', hue: 'random'}), tasks: []}]
+        const updatedColumns = [...prevState.columns, {id: uuid(), name: 'Unnamed', hex: randomColor({luminosity: 'light', hue: 'random'}), tasks: []}]
         return {
             ...prevState,
             columns: updatedColumns

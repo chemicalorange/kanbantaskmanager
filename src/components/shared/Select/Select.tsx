@@ -1,18 +1,17 @@
-import { useState, useEffect, MouseEventHandler } from 'react'
+import { ChangeEventHandler } from 'react'
 import styles from './Select.module.css'
+import Column from '../../../interfaces/Column'
 
 type SelectProps = {
-    variants: string[]
-    onClickHandler: MouseEventHandler<HTMLSelectElement>
+    variants: Column[]
+    onChangeHandler: ChangeEventHandler<HTMLSelectElement>
 }
 
-const Select = ({variants, onClickHandler}: SelectProps) => {
-  const [selected, setSelected] = useState(variants[0])
-
+const Select = ({variants, onChangeHandler}: SelectProps) => {
   return (
-    <select onClick={onClickHandler} className={styles.select}>
+    <select onChange={(e) => onChangeHandler(e)} className={styles.select}>
         {variants.map((item, index) => {
-            return <option className={styles.option} key={index} value={item}>{item}</option>
+            return <option key={index} value={item.id}>{item.name}</option>
         })}
     </select>
   )

@@ -5,6 +5,7 @@ import './App.css'
 import Aside from './components/widgets/Aside/Aside'
 
 import CreateBoardModal from './modals/CreateBoardModal/CreateBoardModal'
+
 import useModal from './hooks/useModal'
 import { useEffect } from 'react'
 

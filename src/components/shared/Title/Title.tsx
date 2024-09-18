@@ -1,5 +1,3 @@
-import React from 'react'
-
 type TitleProps = {
     title: string,
     needOption: boolean

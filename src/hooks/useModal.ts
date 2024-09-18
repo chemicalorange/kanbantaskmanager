@@ -1,6 +1,9 @@
 import { useState } from "react";
 
-const useModal = () => {
+type UseModalReturnTypes = [boolean, () => void]
+
+
+const useModal = (): UseModalReturnTypes => {
     const [isShowing, setIsShowing] = useState(false)
 
     const toggle = () => {

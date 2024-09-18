@@ -4,7 +4,7 @@ import Input from '../Input/Input'
 import styles from './SubInput.module.css'
 
 type SubInputProps = {
-  subInputData: object,
+  subInputData: { name: string },
   onChangeHandler: ChangeEventHandler<HTMLInputElement>,
   onClickHandler: MouseEventHandler<SVGSVGElement>
 }
@@ -12,7 +12,7 @@ type SubInputProps = {
 const SubInput = ({subInputData, onChangeHandler, onClickHandler}: SubInputProps) => {
   return (
     <div className={styles.subInput}>
-      <Input type='text' value={subInputData.name} placeholder='e.g Make coffee' onChangeHandler={(e) => onChangeHandler(e, subInputData)} />
+      <Input type='text' value={subInputData?.name} placeholder='e.g Make coffee' onChangeHandler={(e) => onChangeHandler(e, subInputData)} />
       <CloseIcon onClick={() => onClickHandler(subInputData)} />
     </div>
   )
