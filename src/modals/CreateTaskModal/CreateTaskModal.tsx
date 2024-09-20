@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, SetStateAction, useState } from "react"
 import Button from "../../components/shared/Button/Button"
 import Input from "../../components/shared/Input/Input"
 import Label from "../../components/shared/Label/Label"
@@ -19,16 +19,21 @@ type CreateTaskModalProps = {
 const CreateTaskModal = ({closeModal}: CreateTaskModalProps) => {
   const {currentBoardId} = useAppSelector(state => state.appSlice)
   const currentBoard = useAppSelector(state => state.appSlice.boards.filter(item => item.id === currentBoardId)[0])
-  const [currentColumn, setCurrentColumn] = useState(currentBoard.columns[0].id)
+  const [currentColumn, setCurrentColumn] = useState(currentBoard?.columns ? currentBoard.columns[0].id : null)
 
   const dispatch = useAppDispatch()
 
-  const [taskData, setTaskData] = useState({
+  const [taskData, setTaskData] = useState<{
+    id: string;
+    name: string | null;
+    description: string | null;
+    subtasks: Array<any>;
+  }>({
     id: uuid(),
-    name: null,
-    description: null,
+    name: 'New task',
+    description: '...',
     subtasks: []
-  })
+  });
 
   const onChangeNameHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setTaskData((prevState) => {
@@ -58,7 +63,7 @@ const CreateTaskModal = ({closeModal}: CreateTaskModalProps) => {
     })
   }
 
-  const onChangeSubtaskHandler = (e, object: {id: string}) => {
+  const onChangeSubtaskHandler = (e: ChangeEvent<HTMLInputElement>, object: {id: string}) => {
     const currentSubtaskIndex = taskData.subtasks.findIndex(item => item.id === object.id)
     setTaskData((prevState) => {
         const updatedSubtasks = prevState.subtasks.map((subtask, index) => index === currentSubtaskIndex ? { ...subtask, name: e.target.value }: subtask );
@@ -79,7 +84,7 @@ const CreateTaskModal = ({closeModal}: CreateTaskModalProps) => {
     })
   }
 
-  const onChangeSelectHandler = (e) => {
+  const onChangeSelectHandler = (e: { target: { value: SetStateAction<string | null> } }) => {
     setCurrentColumn(e.target.value)
   }
 
@@ -110,7 +115,7 @@ const CreateTaskModal = ({closeModal}: CreateTaskModalProps) => {
             <Button color="white" title="+ Add New Subtask" onClickHandler={onClickAddSubtaskButtonHandler} />
         </Label>
         <Label title="Status">
-            <Select variants={currentBoard.columns} onChangeHandler={onChangeSelectHandler} />
+            <Select variants={currentBoard.columns || []} onChangeHandler={onChangeSelectHandler} />
         </Label>
         <Button color="purple" title="Create Task" onClickHandler={onClickCreateTaskButtonHandler} />
     </Modal>

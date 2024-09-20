@@ -1,10 +1,10 @@
-import { ChangeEventHandler } from "react"
+import { ChangeEvent } from "react"
 import styles from './Input.module.css'
 
 type InputProps = {
     placeholder: string,
     type: string,
-    onChangeHandler: ChangeEventHandler<HTMLInputElement>,
+    onChangeHandler: (e: ChangeEvent<HTMLInputElement>) => void,
     value: string | undefined
 }
 

@@ -1,32 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 import Board from "../../interfaces/Board";
 
-const initialState: { colorSchema: 'black' | 'white', currentBoardId: string | null, boards: Partial<Board>[] } = {
+const initialState: { colorSchema: 'black' | 'white', currentBoardId: string | null, boards: Board[] } = {
     boards: [
-        {
-            name: '',
-            id: '1',
-            columns: [
-                {
-                    name: 'd',
-                    id: '1',
-                    hex: '',
-                    tasks: []
-                },
-                {
-                    name: 'f',
-                    id: '2',
-                    hex: '',
-                    tasks: []
-                },
-                {
-                    name: 'g',
-                    id: '3',
-                    hex: '',
-                    tasks: []   
-                }
-            ]
-        }
+      {
+        name: 'Test Board',
+        id: '1',
+        columns: [
+          { name: 'Todo', id: '1', hex: '', tasks: [] },
+          { name: 'In Progress', id: '2', hex: '', tasks: [] },
+          { name: 'Done', id: '3', hex: '', tasks: [] }
+        ]
+      }
     ],
     currentBoardId: '1',
     colorSchema: 'black'
@@ -54,7 +39,7 @@ const appSlice = createSlice({
             const taskIndex = state.boards[index].columns[columnIndex].tasks.findIndex(item => item.id === action.payload.taskId)
             state.boards[index].columns[columnIndex].tasks[taskIndex].subtasks.push(action.payload.subtaskData)
         },
-        deleteBoard: (state, action) => {
+        deleteBoard: (state) => {
             state.boards = state.boards.filter(item => item.id !== state.currentBoardId)
         },
         deleteColumn: (state, action) => {
