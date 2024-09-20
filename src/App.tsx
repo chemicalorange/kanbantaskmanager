@@ -2,8 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 import { RoutesEnum } from './routes/routes'
 import './App.css'
 
-import Aside from './components/widgets/Aside/Aside'
-
 import CreateBoardModal from './modals/CreateBoardModal/CreateBoardModal'
 
 import useModal from './hooks/useModal'
