@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './ThemeSwitcher.module.css'
 
 import DarkThemeIcon from '../../../assets/svg/icon-dark-theme.svg?react'

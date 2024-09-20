@@ -6,10 +6,6 @@ import BoardIcon from '../../../assets/svg/icon-board.svg?react'
 const BoardsList = () => {
     const boards = useAppSelector(state => state.appSlice.boards)
 
-    const onClickHandler = () => {
-        
-    }
-
     return (
       <div className={styles.boards_container}>
           <ul className={styles.boards_list}>
