@@ -1,0 +1,10 @@
+.subInput {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.subInput svg {
+    margin: 0 15px;
+    cursor: pointer;
+}
