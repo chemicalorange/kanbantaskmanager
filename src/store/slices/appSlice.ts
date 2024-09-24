@@ -5,20 +5,20 @@ const appSlice = createSlice({
     initialState: {
         boards: [
             {
-                boardId: '123',
-                boardName: 'hello world'
+                id: '123',
+                name: 'hello world'
             },
             {
-                boardId: 'sdgsgsd',
-                boardName: 'lorem ipsum'
+                id: 'sdgsgsd',
+                name: 'lorem ipsum'
             },
             {
-                boardId: 'xcdsv',
-                boardName: 'dolor sit amet'
+                id: 'xcdsv',
+                name: 'dolor sit amet'
             },
             {
-                boardId: 'jge',
-                boardName: 'buratino'
+                id: 'jge',
+                name: 'buratino'
             },
         ]
     },
