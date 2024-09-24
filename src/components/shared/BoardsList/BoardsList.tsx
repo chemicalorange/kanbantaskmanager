@@ -11,7 +11,7 @@ const BoardsList = () => {
           <ul className={styles.boards_list}>
               {boards.length > 0 && 
                   boards.map((item, index) => {
-                      return <BoardListItem boardId={item.boardId} boardTitle={item.boardName} key={index} />
+                      return <BoardListItem boardId={item.id} boardTitle={item.name} key={index} />
                   })
               }
           </ul>
