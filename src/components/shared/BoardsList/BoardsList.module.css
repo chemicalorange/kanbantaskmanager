@@ -4,8 +4,8 @@
 }
 
 .add_new_board_button {
-    color: blueviolet;
-    fill: blueviolet;
+    color: rgb(99, 95, 199);
+    fill: rgb(99, 95, 199);
     background: none;
     margin-left: 25px;
     margin-top: 25px;
@@ -15,4 +15,8 @@
     padding: 0;
     cursor: pointer;
     font-size: 18px;
+}
+
+.add_new_board_button svg {
+    margin-right: 10px;
 }
