@@ -3,21 +3,18 @@
     list-style: none;
     padding: 7px 65px 7px 25px;
     margin-bottom: 15px;
+    color: gray;
+    fill: gray;
 }
 
 .board_link svg {
     margin-right: 10px;
 }
 
-.board_link_unactive {
-    color: gray;
-    fill: gray;
-}
-
 .board_link_active {
     color: white;
     fill: white;
-    background-color: blueviolet;
+    background-color: rgb(99, 95, 199);
     box-sizing: border-box;
     border-top-right-radius: 35px;
     border-bottom-right-radius: 35px;

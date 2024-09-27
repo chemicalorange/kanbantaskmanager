@@ -2,26 +2,16 @@ import { Routes, Route } from 'react-router-dom'
 import { RoutesEnum } from './routes/routes'
 import './App.css'
 
-import CreateBoardModal from './modals/CreateBoardModal/CreateBoardModal'
-
-import useModal from './hooks/useModal'
-import { useEffect } from 'react'
+import Aside from './components/widgets/Aside/Aside'
 
 function App() {
 
-  const [isShowingModal, toggleModal] = useModal()
-
-  useEffect(() => {
-    toggleModal()
-  }, [])
-
   return (
     <>
+      <Aside />
       <Routes>
         <Route path={RoutesEnum.HOME} element={<>home</>} />
-        <Route path={`/:boardId`} element={<> 
-          {isShowingModal && <CreateBoardModal closeModal={toggleModal} /> }
-        </>} />
+        <Route path={`/:boardId`} element={<>board</>} />
       </Routes>
     </>
   )
