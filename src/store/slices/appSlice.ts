@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import Board from "../../interfaces/Board";
+import randomColor from "randomcolor";
 
 const initialState: { colorSchema: 'black' | 'white', currentBoardId: string | null, boards: Board[] } = {
     boards: [
@@ -7,9 +8,9 @@ const initialState: { colorSchema: 'black' | 'white', currentBoardId: string | n
         name: 'Test Board',
         id: '1',
         columns: [
-          { name: 'Todo', id: '1', hex: '', tasks: [] },
-          { name: 'In Progress', id: '2', hex: '', tasks: [] },
-          { name: 'Done', id: '3', hex: '', tasks: [] }
+          { name: 'Todo', id: '1', hex: randomColor({format: "hex", luminosity: 'light'}), tasks: [{id: '123', name: '124243', status: false, subtasks: []}] },
+          { name: 'In Progress', id: '2', hex: randomColor({format: "hex", luminosity: 'light'}), tasks: [] },
+          { name: 'Done', id: '3', hex: randomColor({format: "hex", luminosity: 'light'}), tasks: [] }
         ]
       }
     ],

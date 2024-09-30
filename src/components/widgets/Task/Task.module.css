@@ -1,0 +1,14 @@
+.task_container {
+    padding: 25px 15px;
+    background-color: rgba(43, 44, 55, 0.5);
+    border-radius: 15px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    box-shadow: rgba(54, 78, 126, 0.1) 0px 4px 6px;
+}
+
+.task_name {
+    margin: 0;
+    font-weight: 600;
+    font-size: 18px;
+}

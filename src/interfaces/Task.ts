@@ -4,7 +4,7 @@ interface Task {
     id: string,
     name: string,
     subtasks: SubTask[],
-    status: string
+    status: boolean
 }
 
 export default Task
