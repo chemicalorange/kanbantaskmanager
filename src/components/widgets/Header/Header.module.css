@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgb(43 44 55);
+    border-bottom: 2px solid gray;
+}
+
+.header_name {
+    font-weight: 700;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.header_name p {
+    margin: 0;
+}

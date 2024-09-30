@@ -1,0 +1,7 @@
+.app_container {
+    display: flex;
+}
+
+.app_content {
+    width: 100%;
+}
