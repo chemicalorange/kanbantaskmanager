@@ -17,7 +17,7 @@ const Column = ({column}: ColumnProps) => {
         </div>
         <div className={styles.column_body}>
             {column.tasks.map(item => {
-                return <Task task={item} key={item.id} />
+                return <Task column={column} task={item} key={item.id} />
             })}
         </div>
     </div>

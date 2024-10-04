@@ -8,7 +8,7 @@ const initialState: { colorSchema: 'black' | 'white', currentBoardId: string | n
         name: 'Test Board',
         id: '1',
         columns: [
-          { name: 'Todo', id: '1', hex: randomColor({format: "hex", luminosity: 'light'}), tasks: [{id: '123', name: '124243', status: false, subtasks: []}] },
+          { name: 'Todo', id: '1', hex: randomColor({format: "hex", luminosity: 'light'}), tasks: [{id: '123', name: '124243', description: 'asfsfas', status: false, subtasks: []}] },
           { name: 'In Progress', id: '2', hex: randomColor({format: "hex", luminosity: 'light'}), tasks: [] },
           { name: 'Done', id: '3', hex: randomColor({format: "hex", luminosity: 'light'}), tasks: [] }
         ]

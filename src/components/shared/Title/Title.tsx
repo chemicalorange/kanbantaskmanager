@@ -7,7 +7,7 @@ const Title = ({title, needOption}: TitleProps) => {
   return (
     <div>
         <h2>{title}</h2>
-        {needOption && <p>123</p>}
+        {needOption && <></>}
     </div>
   )
 }
