@@ -18,3 +18,17 @@
 .header_name p {
     margin: 0;
 }
+
+.header_button {
+    display: flex;
+    align-items: center;
+}
+
+.options_span {
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.options_danger {
+    color: red;
+}
