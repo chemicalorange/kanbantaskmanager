@@ -108,7 +108,7 @@ const CreateBoardModal = ({closeModal, board, changeBoardFunction}: CreateBoardM
 
   return (
     <Modal closeModal={closeModal} >
-        <Title title={changeBoardFunction ? "Edit Board" : "Add New Board"} needOption={false} />
+        <Title title={changeBoardFunction ? "Edit Board" : "Add New Board"} />
         <Label title="Name">
             <Input placeholder="e.g Web Design" type="text" value={boardData.name} onChangeHandler={onChangeNameHandler} />
         </Label> 
