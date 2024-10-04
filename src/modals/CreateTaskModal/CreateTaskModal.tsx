@@ -11,28 +11,26 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks"
 import {v4 as uuid} from 'uuid'
 
 import { createTask } from "../../store/slices/appSlice"
+import type Task from "../../interfaces/Task"
 
 type CreateTaskModalProps = {
-    closeModal: Function
+  closeModal: Function,
+  task?: Task,
+  changeTaskFunction?: Function
 }
 
-const CreateTaskModal = ({closeModal}: CreateTaskModalProps) => {
+const CreateTaskModal = ({closeModal, task, changeTaskFunction}: CreateTaskModalProps) => {
   const {currentBoardId} = useAppSelector(state => state.appSlice)
   const currentBoard = useAppSelector(state => state.appSlice.boards.filter(item => item.id === currentBoardId)[0])
   const [currentColumn, setCurrentColumn] = useState(currentBoard?.columns ? currentBoard.columns[0].id : null)
 
   const dispatch = useAppDispatch()
 
-  const [taskData, setTaskData] = useState<{
-    id: string;
-    name: string | null;
-    description: string | null;
-    subtasks: Array<any>;
-  }>({
-    id: uuid(),
-    name: 'New task',
-    description: '...',
-    subtasks: []
+  const [taskData, setTaskData] = useState({
+    id: task?.id || uuid(),
+    name: task?.name || 'New task',
+    description: task?.description || '...',
+    subtasks: task?.subtasks || []
   });
 
   const onChangeNameHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -89,17 +87,21 @@ const CreateTaskModal = ({closeModal}: CreateTaskModalProps) => {
   }
 
   const onClickCreateTaskButtonHandler = () => {
+    closeModal()
+    if (changeTaskFunction) {
+      changeTaskFunction(task)
+      return
+    }
     dispatch(createTask({
         boardId: currentBoardId,
         columnId: currentColumn,
         taskData
     }))
-    closeModal()
   }
 
   return (
     <Modal closeModal={closeModal}>
-        <Title title="Add New Task" needOption={false} />
+        <Title title="Add New Task" />
         <Label title="Title">
             <Input value={undefined} placeholder="e.g Take coffee break" type="text" onChangeHandler={(e) => onChangeNameHandler(e)} />
         </Label> 

@@ -1,0 +1,9 @@
+.column_container {
+    margin-right: 45px;
+    width: 280px;
+}
+
+.column_header {
+    display: flex;
+    align-items: center;
+}

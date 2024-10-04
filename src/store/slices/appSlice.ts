@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import Board from "../../interfaces/Board";
+import randomColor from "randomcolor";
 
 const initialState: { colorSchema: 'black' | 'white', currentBoardId: string | null, boards: Board[] } = {
     boards: [
@@ -7,9 +8,9 @@ const initialState: { colorSchema: 'black' | 'white', currentBoardId: string | n
         name: 'Test Board',
         id: '1',
         columns: [
-          { name: 'Todo', id: '1', hex: '', tasks: [] },
-          { name: 'In Progress', id: '2', hex: '', tasks: [] },
-          { name: 'Done', id: '3', hex: '', tasks: [] }
+          { name: 'Todo', id: '1', hex: randomColor({format: "hex", luminosity: 'light'}), tasks: [{id: '123', name: '124243', description: 'asfsfas', status: false, subtasks: []}] },
+          { name: 'In Progress', id: '2', hex: randomColor({format: "hex", luminosity: 'light'}), tasks: [] },
+          { name: 'Done', id: '3', hex: randomColor({format: "hex", luminosity: 'light'}), tasks: [] }
         ]
       }
     ],
@@ -57,6 +58,12 @@ const appSlice = createSlice({
             const taskIndex = state.boards[index].columns[columnIndex].tasks.findIndex(item => item.id === action.payload.taskId)
             state.boards[index].columns[columnIndex].tasks[taskIndex].subtasks = state.boards[index].columns[columnIndex].tasks[taskIndex].subtasks.filter(item => item.id !== action.payload.subtaskId)
         },
+        changeBoard: (state, action) => {
+            const updatedBoard = action.payload.boardData;
+            state.boards = state.boards.map(item => 
+                item.id === state.currentBoardId ? updatedBoard : item
+            );
+        },
         setCurrentBoard: (state, action) => {
             state.currentBoardId = action.payload.id
         },
@@ -68,6 +75,7 @@ const appSlice = createSlice({
 
 export const { createBoard, createColumn, createTask, createSubTask } = appSlice.actions
 export const { deleteBoard, deleteColumn, deleteTask, deleteSubtask } = appSlice.actions
+export const { changeBoard } = appSlice.actions
 export const { setCurrentBoard, setColorSchema } = appSlice.actions
 
 export default appSlice.reducer

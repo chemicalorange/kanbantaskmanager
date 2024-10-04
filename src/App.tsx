@@ -4,6 +4,7 @@ import styles from './App.module.css'
 
 import Aside from './components/widgets/Aside/Aside'
 import Header from './components/widgets/Header/Header'
+import Board from './components/widgets/Board/Board'
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
         <Header />
         <Routes>
           <Route path={RoutesEnum.HOME} element={<>home</>} />
-          <Route path={`/:boardId`} element={<>board</>} />
+          <Route path={`/:boardId`} element={<Board/> } />
         </Routes>
       </div>
     </div>

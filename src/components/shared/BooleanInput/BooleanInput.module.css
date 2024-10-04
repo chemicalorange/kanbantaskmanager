@@ -1,0 +1,28 @@
+.boolean_input_container {
+    display: flex;
+    padding: 7px;
+    margin-bottom: 10px;
+    align-items: center;
+    background-color: rgba(32, 33, 44, 1);
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.boolean_input_container input {
+    margin-right: 15px;
+}
+
+.boolean_input_container p {
+    margin: 0;
+}
+
+.boolean_input_container__active {
+    background-color: rgba(100, 96, 199, 0.25);
+    text-decoration: line-through;
+    color: gray;
+}
+
+.boolean_input_container__active p {
+    font-weight: 400;
+}
