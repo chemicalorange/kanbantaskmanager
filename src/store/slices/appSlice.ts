@@ -58,6 +58,12 @@ const appSlice = createSlice({
             const taskIndex = state.boards[index].columns[columnIndex].tasks.findIndex(item => item.id === action.payload.taskId)
             state.boards[index].columns[columnIndex].tasks[taskIndex].subtasks = state.boards[index].columns[columnIndex].tasks[taskIndex].subtasks.filter(item => item.id !== action.payload.subtaskId)
         },
+        changeBoard: (state, action) => {
+            const updatedBoard = action.payload.boardData;
+            state.boards = state.boards.map(item => 
+                item.id === state.currentBoardId ? updatedBoard : item
+            );
+        },
         setCurrentBoard: (state, action) => {
             state.currentBoardId = action.payload.id
         },
@@ -69,6 +75,7 @@ const appSlice = createSlice({
 
 export const { createBoard, createColumn, createTask, createSubTask } = appSlice.actions
 export const { deleteBoard, deleteColumn, deleteTask, deleteSubtask } = appSlice.actions
+export const { changeBoard } = appSlice.actions
 export const { setCurrentBoard, setColorSchema } = appSlice.actions
 
 export default appSlice.reducer

@@ -1,13 +1,11 @@
 type TitleProps = {
     title: string,
-    needOption: boolean
 }
 
-const Title = ({title, needOption}: TitleProps) => {
+const Title = ({title}: TitleProps) => {
   return (
     <div>
         <h2>{title}</h2>
-        {needOption && <></>}
     </div>
   )
 }

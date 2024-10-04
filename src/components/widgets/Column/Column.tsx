@@ -1,4 +1,4 @@
-import Column from "../../../interfaces/Column"
+import type Column from "../../../interfaces/Column"
 import HexCircle from "../../shared/HexCircle/HexCircle"
 import UppercaseCounter from "../../shared/UppercaseCounter/UppercaseCounter"
 import Task from "../Task/Task"

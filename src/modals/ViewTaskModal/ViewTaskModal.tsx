@@ -58,7 +58,7 @@ const ViewTaskModal = ({closeModal, task, column}: ChangeTaskModal) => {
 
   return (
     <Modal closeModal={closeModal}>
-        <Title needOption={true} title={task.name} />
+        <Title title={task.name} />
         <Description text={task.description} />
         <Label title={`Subtasks ${currentTask.subtasks.filter(item => item.isCompleted == true).length} of ${currentTask.subtasks.length}`}>
           {currentTask.subtasks.map(item => {

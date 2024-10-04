@@ -10,20 +10,23 @@ import { createBoard, setCurrentBoard } from "../../store/slices/appSlice"
 import {v4 as uuid} from 'uuid'
 import randomColor from 'randomcolor'
 import { useNavigate } from "react-router-dom"
+import Board from "../../interfaces/Board"
 
 type CreateBoardModalProps = {
-    closeModal: Function
+    closeModal: Function,
+    board?: Board,
+    changeBoardFunction?: Function
 }
 
-const CreateBoardModal = ({closeModal}: CreateBoardModalProps) => {
+const CreateBoardModal = ({closeModal, board, changeBoardFunction}: CreateBoardModalProps) => {
   const dispatch = useAppDispatch()
 
   const navigate = useNavigate()
 
   const [boardData, setBoardData] = useState({
-    id: uuid(),
-    name: 'New Board',
-    columns: [
+    id: board?.id || uuid(),
+    name: board?.name || 'New Board',
+    columns: board?.columns || [
         {
             id: uuid(),
             name: 'Todo',
@@ -91,15 +94,21 @@ const CreateBoardModal = ({closeModal}: CreateBoardModalProps) => {
   }
 
   const onClickCreateBoardButtonHandler = () => {
-    dispatch(createBoard({boardData}))
-    dispatch(setCurrentBoard({id: boardData.id}))
     closeModal()
     navigate(`../${boardData.id}`)
+
+    if (changeBoardFunction) {
+        changeBoardFunction(boardData)
+        return
+    }
+
+    dispatch(createBoard({boardData}))
+    dispatch(setCurrentBoard({id: boardData.id}))
   }
 
   return (
     <Modal closeModal={closeModal} >
-        <Title title="Add New Board" needOption={false} />
+        <Title title={changeBoardFunction ? "Edit Board" : "Add New Board"} needOption={false} />
         <Label title="Name">
             <Input placeholder="e.g Web Design" type="text" value={boardData.name} onChangeHandler={onChangeNameHandler} />
         </Label> 
@@ -109,7 +118,7 @@ const CreateBoardModal = ({closeModal}: CreateBoardModalProps) => {
             })}
             <Button color="white" title="+ Add New Column" onClickHandler={onClickCreateColumnButtonHandler} />
         </Label>
-        <Button color="purple" title="Create New Board" onClickHandler={onClickCreateBoardButtonHandler} />
+        <Button color="purple" title={changeBoardFunction ? "Save Board" : "Create New Board"} onClickHandler={onClickCreateBoardButtonHandler} />
     </Modal>
   )
 }

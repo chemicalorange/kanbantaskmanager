@@ -1,4 +1,4 @@
-import Task from "../../../interfaces/Task"
+import type Task from "../../../interfaces/Task"
 import styles from './Task.module.css'
 import ViewTaskModal from "../../../modals/ViewTaskModal/ViewTaskModal"
 import useModal from "../../../hooks/useModal"
