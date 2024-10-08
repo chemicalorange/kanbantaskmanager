@@ -1,9 +1,10 @@
 .textarea {
-    background-color: rgb(32 33 44);
+    background-color: var(--bg-content-dark-blue);
     resize: none;
     padding: 15px;
     box-sizing: border-box;
     width: 100%;
     font-size: 18px;
     border-radius: 15px;
+    border-color: var(--bg-content-gray);
 }

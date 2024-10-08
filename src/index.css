@@ -9,6 +9,14 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --bg-content-gray: rgb(43, 44, 55);
+  --bg-content-gray-gradient: linear-gradient(180deg, #2b2c3740, #2b2c3720);
+  --bg-content-dark-blue: rgb(32, 33, 44);
+  --bg-content-purple: rgb(99, 95, 199);
+  --bg-content-dark-purple: rgba(100, 96, 199, 0.25);
+  --color-text-danger: red;
+  --color-text-gray: rgb(130, 143, 163);
 }
 
 body {

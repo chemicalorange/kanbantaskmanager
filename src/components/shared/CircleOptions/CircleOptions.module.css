@@ -15,7 +15,7 @@
 .dot {
     width: 7px;
     height: 7px;
-    background-color: gray;
+    background-color: var(--color-text-gray);
     border-radius: 50%;
 }
 
@@ -25,7 +25,7 @@
     top: 30px;
     left: -110px;
     padding: 15px;
-    background-color: rgb(32 33 44);
+    background-color: var(--bg-content-dark-blue);
     box-shadow: rgba(54, 78, 126, 0.25) 0px 10px 20px;
     border-radius: 15px;
     box-sizing: border-box;

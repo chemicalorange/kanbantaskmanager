@@ -3,8 +3,8 @@
     list-style: none;
     padding: 7px 65px 7px 25px;
     margin-bottom: 15px;
-    color: gray;
-    fill: gray;
+    color: var(--color-text-gray);
+    fill: var(--color-text-gray);
 }
 
 .board_link svg {
@@ -14,7 +14,7 @@
 .board_link_active {
     color: white;
     fill: white;
-    background-color: rgb(99, 95, 199);
+    background-color: var(--bg-content-purple);
     box-sizing: border-box;
     border-top-right-radius: 35px;
     border-bottom-right-radius: 35px;

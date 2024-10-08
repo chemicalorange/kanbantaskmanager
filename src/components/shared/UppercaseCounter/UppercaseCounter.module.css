@@ -1,6 +1,6 @@
 .uppercase_counter{
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: gray;
+    color: var(--color-text-gray);
     margin-left: 25px;
 }

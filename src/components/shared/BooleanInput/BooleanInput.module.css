@@ -18,9 +18,9 @@
 }
 
 .boolean_input_container__active {
-    background-color: rgba(100, 96, 199, 0.25);
+    background-color: var(--bg-content-dark-purple);
     text-decoration: line-through;
-    color: gray;
+    color: var(--color-text-gray);
 }
 
 .boolean_input_container__active p {

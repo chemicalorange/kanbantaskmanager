@@ -9,4 +9,5 @@ aside {
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
+    background-color: var(--bg-content-gray);
 }

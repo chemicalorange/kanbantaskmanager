@@ -1,8 +1,8 @@
 .board_container {
     padding: 20px;
     box-sizing: border-box;
-    overflow: auto;
     display: flex;
-    background-color: rgb(32 33 44);
+    overflow-x: auto;
+    background-color: var(--bg-content-dark-blue);
     height: 100%;
 }

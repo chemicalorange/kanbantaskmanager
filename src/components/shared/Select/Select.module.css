@@ -4,6 +4,7 @@
     width: 100%;
     cursor: pointer;
     font-size: 18px;
-    background-color: rgb(32 33 44);
+    background-color: var(--bg-content-dark-blue);
     border-radius: 15px;
+    border-color: var(--bg-content-gray);
 }

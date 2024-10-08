@@ -13,9 +13,10 @@
 .modal_content{
     padding: 30px;
     border-radius: 15px;
-    background-color: rgb(43 44 55);
+    background-color: var(--bg-content-gray);
     width: 25%;
-    overflow: auto;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .modal_content h2 {
