@@ -7,18 +7,20 @@ import Task from "../../interfaces/Task"
 import Description from "../../components/shared/Description/Description"
 import BooleanInput from "../../components/shared/BooleanInput/BooleanInput"
 import { useAppDispatch, useAppSelector } from "../../store/hooks"
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, MouseEventHandler, useState } from "react"
 import { createTask, deleteTask } from "../../store/slices/appSlice"
 import Column from "../../interfaces/Column"
 import SubTask from "../../interfaces/SubTask"
+import CircleOptions from "../../components/shared/CircleOptions/CircleOptions"
 
 type ChangeTaskModal = {
     closeModal: Function,
     task: Task,
-    column: Column
+    column: Column,
+    showEditModal: MouseEventHandler<HTMLSpanElement>
 }
 
-const ViewTaskModal = ({closeModal, task, column}: ChangeTaskModal) => {
+const ViewTaskModal = ({closeModal, task, column, showEditModal}: ChangeTaskModal) => {
   const currentBoardId = useAppSelector(state => state.appSlice.currentBoardId)
   const currentBoard = useAppSelector(state => state.appSlice.boards.filter(item => item.id === currentBoardId)[0]) 
 
@@ -56,9 +58,18 @@ const ViewTaskModal = ({closeModal, task, column}: ChangeTaskModal) => {
     closeModal()
   }
 
+  const clickDeleteButton = () => {
+    dispatch(deleteTask({columnId: column.id, taskId: task.id}))
+  }
   return (
     <Modal closeModal={closeModal}>
-        <Title title={task.name} />
+        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+          <Title title={task.name} />
+          <CircleOptions >
+            <span onClick={showEditModal} style={{cursor: 'pointer', margin: '5px 0'}}>Edit Task</span>
+            <span onClick={clickDeleteButton} style={{cursor: 'pointer', color: 'red', margin: '5px 0'}}>Delete Task</span>
+          </CircleOptions>
+        </div>
         <Description text={task.description} />
         <Label title={`Subtasks ${currentTask.subtasks.filter(item => item.isCompleted == true).length} of ${currentTask.subtasks.length}`}>
           {currentTask.subtasks.map(item => {

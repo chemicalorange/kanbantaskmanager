@@ -18,7 +18,7 @@ const Header = () => {
   const navigate = useNavigate()
 
   const [isShowing, toggle] = useModal()
-  const [isShowingEditMdoal, toggleEditModal] = useModal()
+  const [isShowingEditModal, toggleEditModal] = useModal()
 
   const clickDeleteButton = () => {
     dispatch(deleteBoard())
@@ -48,7 +48,7 @@ const Header = () => {
           </div>
         }
         {isShowing && <CreateTaskModal closeModal={toggle} /> }
-        {isShowingEditMdoal && <CreateBoardModal closeModal={toggleEditModal} board={currentBoard} changeBoardFunction={changeBoardFunction} /> }
+        {isShowingEditModal && <CreateBoardModal closeModal={toggleEditModal} board={currentBoard} changeBoardFunction={changeBoardFunction} /> }
     </header>
   )
 }
