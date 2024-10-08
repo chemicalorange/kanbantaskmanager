@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react"
+import { ReactNode, useEffect, useState, useCallback } from "react"
 import styles from './CircleOptions.module.css'
 
 type CircleOprionsProps = {
@@ -11,9 +11,18 @@ const CircleOptions = ({children}: CircleOprionsProps) => {
     toggle(!isShowing)
   }
 
+  const onKeyUpHandler = useCallback((e: KeyboardEvent) => {
+    if (e.key == 'Escape' && isShowing) {
+        toggle(!isShowing)
+    }
+  }, [isShowing])
+
   useEffect(() => {
-    toggle(false)
-  }, [])
+    document.addEventListener('keyup', onKeyUpHandler)
+    return () => {
+        document.removeEventListener('keyup', onKeyUpHandler)
+    }
+  }, [onKeyUpHandler])
 
   return (
     <div className={styles.container}>
