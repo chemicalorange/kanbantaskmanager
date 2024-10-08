@@ -4,6 +4,6 @@
     width: 100%;
     font-size: 18px;
     border-radius: 15px;
-    border: 1px solid gray;
-    background-color: rgb(32 33 44);
+    border: 1px solid var(--bg-content-gray);
+    background-color: var(--bg-content-dark-blue);
 }

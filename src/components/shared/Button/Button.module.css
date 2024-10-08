@@ -12,9 +12,9 @@
 
 .button_bg_white {
     background-color: white;
-    color: rgb(99, 95, 199);
+    color: var(--bg-content-purple);
 }
 
 .button_bg_purple {
-    background-color: rgb(99, 95, 199);
+    background-color: var(--bg-content-purple);
 }

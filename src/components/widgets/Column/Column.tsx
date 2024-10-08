@@ -1,3 +1,4 @@
+import classNames from "classnames"
 import type Column from "../../../interfaces/Column"
 import HexCircle from "../../shared/HexCircle/HexCircle"
 import UppercaseCounter from "../../shared/UppercaseCounter/UppercaseCounter"
@@ -15,7 +16,7 @@ const Column = ({column}: ColumnProps) => {
             <HexCircle hex={column.hex} />
             <UppercaseCounter title={column.name} count={column.tasks.length} />
         </div>
-        <div className={styles.column_body}>
+        <div className={classNames(styles.column_body, column.tasks.length < 1 ? styles.empty_column : null)}>
             {column.tasks.map(item => {
                 return <Task column={column} task={item} key={item.id} />
             })}
