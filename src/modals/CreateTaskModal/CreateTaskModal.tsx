@@ -89,7 +89,7 @@ const CreateTaskModal = ({closeModal, task, changeTaskFunction}: CreateTaskModal
   const onClickCreateTaskButtonHandler = () => {
     closeModal()
     if (changeTaskFunction) {
-      changeTaskFunction(task)
+      changeTaskFunction(taskData, currentColumn)
       return
     }
     dispatch(createTask({
@@ -101,12 +101,12 @@ const CreateTaskModal = ({closeModal, task, changeTaskFunction}: CreateTaskModal
 
   return (
     <Modal closeModal={closeModal}>
-        <Title title="Add New Task" />
+        <Title title={changeTaskFunction ? 'Edit Task' : "Add New Task"} />
         <Label title="Title">
-            <Input value={undefined} placeholder="e.g Take coffee break" type="text" onChangeHandler={(e) => onChangeNameHandler(e)} />
+            <Input value={taskData.name} placeholder="e.g Take coffee break" type="text" onChangeHandler={(e) => onChangeNameHandler(e)} />
         </Label> 
         <Label title="Description">
-            <Textarea placeholder="e.g It`s always good to take a break" onChangeHandler={(e) => onChangeDescriptionHandler(e)} />
+            <Textarea value={taskData.description} placeholder="e.g It`s always good to take a break" onChangeHandler={(e) => onChangeDescriptionHandler(e)} />
         </Label>
         <Label title="Subtasks">
             {taskData.subtasks.length > 0 && 
@@ -119,7 +119,7 @@ const CreateTaskModal = ({closeModal, task, changeTaskFunction}: CreateTaskModal
         <Label title="Status">
             <Select variants={currentBoard.columns || []} onChangeHandler={onChangeSelectHandler} />
         </Label>
-        <Button color="purple" title="Create Task" onClickHandler={onClickCreateTaskButtonHandler} />
+        <Button color="purple" title={changeTaskFunction ? "Save Task" : "Create Task"} onClickHandler={onClickCreateTaskButtonHandler} />
     </Modal>
   )
 }
