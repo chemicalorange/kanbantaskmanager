@@ -1,0 +1,19 @@
+.theme_switcher_container {
+    display: flex;
+    justify-content: center;
+    padding: 15px 25px;
+    margin-left: 15px;
+    background-color: var(--bg-content-dark-blue);
+    border-radius: 15px;
+}
+
+.theme_switcher {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon {
+    fill: white;
+    margin: 0 10px;
+}

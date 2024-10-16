@@ -9,29 +9,30 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  --bg-content-gray: rgb(43, 44, 55);
-  --bg-content-gray-gradient: linear-gradient(180deg, #2b2c3740, #2b2c3720);
-  --bg-content-dark-blue: rgb(32, 33, 44);
-  --bg-content-purple: rgb(99, 95, 199);
-  --bg-content-dark-purple: rgba(100, 96, 199, 0.25);
-  --color-text-danger: red;
-  --color-text-gray: rgb(130, 143, 163);
 }
 
 body {
   margin: 0;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+body.dark-theme {
+  --bg-content: rgb(43, 44, 55);
+  --bg-content-dark: rgb(32, 33, 44);
+  --bg-content-gray-gradient: linear-gradient(180deg, #2b2c3740, #2b2c3720);
+  --bg-content-purple: rgb(99, 95, 199);
+  --bg-content-dark-purple: rgba(100, 96, 199, 0.25);
+  --color-text-danger: red;
+  --color-text-gray: rgb(130, 143, 163);
+
+}
+
+body.light-theme {
+  --bg-content: white;
+  --bg-content-dark: rgb(244 247 253);
+  --bg-content-gray-gradient: linear-gradient(180deg, #e9effa, #e9effa80);
+  --bg-content-purple: rgb(99, 95, 199);
+  --bg-content-dark-purple: rgba(100, 96, 199, 0.25);
+  --color-text-danger: red;
+  --color-text-gray: rgb(130, 143, 163);
+
 }
