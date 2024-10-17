@@ -3,7 +3,7 @@
     border-radius: 15px;
     box-sizing: border-box;
     width: 280px;
-    height: 80%;
+    height: 85%;
     cursor: pointer;
     background: var(--bg-content-gray-gradient);
     display: flex;

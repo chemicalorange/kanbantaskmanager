@@ -13,6 +13,7 @@
 
 body {
   margin: 0;
+  color: var(--color-text);
 }
 
 body.dark-theme {
@@ -23,7 +24,9 @@ body.dark-theme {
   --bg-content-dark-purple: rgba(100, 96, 199, 0.25);
   --color-text-danger: red;
   --color-text-gray: rgb(130, 143, 163);
-
+  --color-text: white;
+  --border: rgb(62 63 78);
+  --altertnative-button: white;
 }
 
 body.light-theme {
@@ -34,5 +37,7 @@ body.light-theme {
   --bg-content-dark-purple: rgba(100, 96, 199, 0.25);
   --color-text-danger: red;
   --color-text-gray: rgb(130, 143, 163);
-
+  --color-text: rgb(0 1 18);
+  --border: rgb(228 235 250);
+  --altertnative-button: rgba(99, 95, 199, 0.098);
 }

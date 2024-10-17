@@ -23,8 +23,8 @@ const Task = ({task, column}: TaskProps) => {
   }
 
   const editTaskFunction = (taskData: Task, columnId: string) => {
-    dispatch(createTask({columnId, taskData}))
     dispatch(deleteTask({columnId: column.id, taskId: task.id}))
+    dispatch(createTask({columnId, taskData}))
   }
   
   return (

@@ -3,7 +3,7 @@
     justify-content: center;
     padding: 15px 25px;
     margin-left: 15px;
-    background-color: var(--bg-content-dark-blue);
+    background-color: var(--bg-content-dark);
     border-radius: 15px;
 }
 
@@ -14,6 +14,6 @@
 }
 
 .icon {
-    fill: white;
+    fill: var(--color-text-gray);
     margin: 0 10px;
 }
