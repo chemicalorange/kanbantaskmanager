@@ -6,7 +6,7 @@
 
 .board_place {
     background-color: var(--bg-content-dark);
-    height: 87%;
+    height: 100%;
     border-radius: 15px;
     cursor: pointer;
     display: flex;

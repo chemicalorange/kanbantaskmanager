@@ -1,9 +1,11 @@
 .app_container {
+    width: 100%;
     display: flex;
 }
 
 .app_content {
-    width: 100%;
+    width: 85%;
     height: 100vh;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
