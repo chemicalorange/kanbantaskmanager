@@ -7,6 +7,7 @@ import Header from './components/widgets/Header/Header'
 import Board from './components/widgets/Board/Board'
 import { useEffect } from 'react'
 import { useAppSelector } from './store/hooks'
+import BoardPlace from './components/widgets/BoardPlace/BoardPlace'
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
       <div className={styles.app_content}>
         <Header />
         <Routes>
-          <Route path={RoutesEnum.HOME} element={<>home</>} />
+          <Route path={RoutesEnum.HOME} element={<BoardPlace /> } />
           <Route path={`/:boardId`} element={<Board/> } />
         </Routes>
       </div>

@@ -1,0 +1,21 @@
+.board_place_container {
+    height: 100%;
+    padding: 25px;
+    background-color: var(--bg-content);
+}
+
+.board_place {
+    background-color: var(--bg-content-dark);
+    height: 87%;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board_place p {
+    color: var(--color-text);
+    font-size: 24px;
+    font-weight: 600;
+}
