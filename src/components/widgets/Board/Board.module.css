@@ -3,6 +3,6 @@
     box-sizing: border-box;
     display: flex;
     overflow-x: auto;
-    background-color: var(--bg-content-dark-blue);
+    background-color: var(--bg-content-dark);
     height: 100%;
 }

@@ -1,7 +1,7 @@
 aside {
     width: 15%;
     height: 100vh;
-    border-right: 2px solid gray;
+    border-right: 1px solid var(--border);
     padding-right: 15px;
     padding-top: 30px;
     padding-bottom: 15px;
@@ -9,5 +9,5 @@ aside {
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
-    background-color: var(--bg-content-gray);
+    background-color: var(--bg-content);
 }

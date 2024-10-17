@@ -1,6 +1,6 @@
 .task_container {
     padding: 25px 15px;
-    background-color: var(--bg-content-gray);
+    background-color: var(--bg-content);
     border-radius: 15px;
     margin-bottom: 25px;
     cursor: pointer;

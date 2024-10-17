@@ -11,7 +11,7 @@
 }
 
 .button_bg_white {
-    background-color: white;
+    background-color: var(--altertnative-button);
     color: var(--bg-content-purple);
 }
 
